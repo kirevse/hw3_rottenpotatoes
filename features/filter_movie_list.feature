@@ -31,14 +31,12 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   Then I should see "When Harry Met Sally"
   Then I should see "The Incredibles"
   Then I should see "Raiders of the Lost Ark"
-  # enter step(s) to check the 'PG' and 'R' checkboxes
-  # enter step(s) to uncheck all other checkboxes
-  # enter step to "submit" the search form on the homepage
-  # enter step(s) to ensure that PG and R movies are visible
-  # enter step(s) to ensure that other movies are not visible
 
 Scenario: no ratings selected
+#  Then I should see all of the movies
   # see assignment
 
 Scenario: all ratings selected
-  # see assignment
+  Given I check the following ratings: G, PG, R, PG-13
+  And I press "Refresh"
+  Then I should see all of the movies

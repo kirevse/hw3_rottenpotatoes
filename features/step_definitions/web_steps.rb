@@ -252,3 +252,7 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Given /^(?:|I )check the following ratings:$/ do |rating|
+  steps << "When I check ratings[#{rating}]"
+end

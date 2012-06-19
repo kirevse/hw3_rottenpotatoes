@@ -23,9 +23,8 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
-  # your steps here
+  Then I should see "Aladdin" before "Amelie"
 
 Scenario: sort movies in increasing order of release date
-  When i follow "Release Date"
-  # your steps here
-
+  When I follow "Release Date"
+  Then I should see "26-Oct-1984" before "25-Nov-1992"
